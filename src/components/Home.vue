@@ -1,6 +1,7 @@
 <template>
    <div>
-       {{ status  }}
+       <h1>Server Status : {{ status }}</h1>
+       <button @click="changeStatus">Change Status</button>
    </div>
 </template>
 
@@ -9,6 +10,11 @@ export default {
     data: function() {
         return {
             status: 'Critical'
+        }
+    },
+    methods: {
+        changeStatus: function() {
+            this.status = 'Running'
         }
     }
 }
