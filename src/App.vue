@@ -1,6 +1,6 @@
 <template>
   <div>
-    <home></home>    
+    <home v-for="server in 5">{{server}}</home>    
   </div>
   
 </template>
