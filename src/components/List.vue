@@ -1,29 +1,21 @@
 <template>
   <div>
-      <div>
-        <h1>{{ title }}</h1>
-      </div>
-      <hr>
-      <h2>{{ title | toUpperCase}}</h2>
-      <hr>
+
       <label for="fruit">Fruit :</label>
       <input type="text" name="fruit" id="fruit" v-model="input">
       
       <ul>
         <li v-for="fruit in filteredFruits" v-bind:key="fruit">{{fruit}}</li>
       </ul>
-      <hr>
-      <app-list></app-list>
   </div>
   
 </template>
 
 <script>
-  import List from './components/List.vue'
+
   export default {
     data: function() {
       return {
-        title: 'Hello There',
         fruits: ['Apple', 'Banana', 'Pear', 'Melon'],
         input: ''
       }
@@ -39,9 +31,6 @@
           return fruit.match(this.input)  
         })
       }
-    },
-    components: {
-      appList: List
     }
   }
 </script>
