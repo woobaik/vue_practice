@@ -5,10 +5,12 @@
     <hr>
     <button @click="show=!show">{{ button }}</button>
      value check [ {{ show }} ]
-
-     <p v-if="show" class="sample">
+    <transition name="fade">
+      <p v-if="show" class="sample">
        This is a sample test
      </p>
+    </transition>
+     
   </div>
   
 </template>
@@ -29,5 +31,22 @@ export default {
   .sample {
     background-color: lightcoral;
     border: 4px solid black;
+  }
+
+  .fade-enter {
+    opacity: 0;
+  }
+
+  .fade-enter-active {
+    transition: opacity 1s;
+  }
+
+  .fade-leave {
+    opacity: 1;
+  }
+
+  .fade-leave-active {
+    transition: opacity 1s;
+    opacity: 0;
   }
 </style>
