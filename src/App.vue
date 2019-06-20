@@ -17,7 +17,7 @@
     </transition>
       <transition name="slide" appear>
        <p v-if="show" class="sample">
-         This is a sample test
+         
       </p>
     </transition>
      
